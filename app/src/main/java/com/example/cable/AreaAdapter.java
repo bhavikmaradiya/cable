@@ -17,8 +17,7 @@ public class AreaAdapter extends BaseAdapter {
     public AreaAdapter(Context context) {
         this.context = context;
         this.categories = new ArrayList<>();
-        this.categories.add("Select Item Type");
-        this.categories.add("area");
+        this.categories.add("Select Area");
     }
 
     @Override

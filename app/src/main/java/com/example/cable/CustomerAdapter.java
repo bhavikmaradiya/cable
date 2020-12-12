@@ -8,7 +8,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class CustomerAdapter extends RecyclerView.Adapter<CustomerAdapter.Viewholde> {
+public class CustomerAdapter extends RecyclerView.Adapter<CustomerAdapter.ViewHolder> {
 
   private CustomerAdapter[] list;
 
@@ -18,15 +18,14 @@ public class CustomerAdapter extends RecyclerView.Adapter<CustomerAdapter.Viewho
 
     @NonNull
     @Override
-    public CustomerAdapter.Viewholde onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater=LayoutInflater.from(parent.getContext());
-        View list=layoutInflater.inflate(R.layout.customeritem,parent,false);
-        Viewholde viewhold =new Viewholde(list);
-        return viewhold;
+        View list=layoutInflater.inflate(R.layout.customer_item,parent,false);
+        return new ViewHolder(list);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull Viewholde holder, int position) {
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
 //        holder.tvsubscribername.setText(list[position]);
 //        holder.tvmobileno.setText(list[position]);
 
@@ -37,10 +36,10 @@ public class CustomerAdapter extends RecyclerView.Adapter<CustomerAdapter.Viewho
         return 0;
     }
 
-    public class Viewholde extends RecyclerView.ViewHolder {
+    public static class ViewHolder extends RecyclerView.ViewHolder {
         TextView tvsubscribername,tvmobileno;
 
-        public Viewholde(@NonNull View itemView) {
+        public ViewHolder(@NonNull View itemView) {
             super(itemView);
             this.tvsubscribername=itemView.findViewById(R.id.tvsubscribername);
             this.tvmobileno=itemView.findViewById(R.id.tvmobileno);

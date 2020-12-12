@@ -11,8 +11,8 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?actionBarSize"
-        app:title="cable"
-        app:titleTextColor="@color/black"
+        app:title="Details"
+        app:titleTextColor="@color/white"
         android:background="#4CAF50"/>
 
 <ScrollView
