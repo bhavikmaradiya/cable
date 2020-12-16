@@ -1,46 +1,35 @@
 package com.example.cable;
 
 import android.os.Bundle;
-import android.view.View;
-import android.view.WindowManager;
-import android.widget.AdapterView;
-import android.widget.Spinner;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
+import androidx.appcompat.widget.Toolbar;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentPagerAdapter;
+import androidx.viewpager.widget.ViewPager;
+
+import com.google.android.material.tabs.TabLayout;
 
 public class MainActivity extends AppCompatActivity {
-    Spinner areaspinner;
-    RecyclerView recycleview;
+    TabLayout tabLayout;
+    PagerAdapter pagerAdapter;
+    ViewPager pager;
+    Toolbar toolbar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        pager = findViewById(R.id.viewPager);
+        toolbar = findViewById(R.id.toolbar);
+        tabLayout = findViewById(R.id.tabLayout);
+        tabLayout.setupWithViewPager(pager);
+        setSupportActionBar(toolbar);
 
-        areaspinner=findViewById(R.id.areaspinner);
-        recycleview=findViewById(R.id.recycleview);
-        areaspinner.setBackgroundResource(R.drawable.spinnerlayout);
-        AreaAdapter adapter=new AreaAdapter(this);
-        areaspinner.setAdapter(adapter);
-
-//        CustomerAdapter adapterrecycle=new CustomerAdapter();
-        recycleview.setHasFixedSize(true);
-        recycleview.setLayoutManager(new LinearLayoutManager(this));
-//        recycleview.setAdapter(adapterrecycle);
-
-        areaspinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(MainActivity.this,parent.getItemAtPosition(position).toString(), Toast.LENGTH_LONG).show();
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });
+        Fragment[] fragments = new Fragment[2];
+        fragments[0] = new CurrentSubscriberFragment();
+        fragments[1] = new PendingSubscriberFragment();
+        pagerAdapter = new PagerAdapter(getSupportFragmentManager(), fragments, new String[]{"Current", "Pending"}, FragmentPagerAdapter.BEHAVIOR_SET_USER_VISIBLE_HINT);
+        pager.setAdapter(pagerAdapter);
     }
 
 }
