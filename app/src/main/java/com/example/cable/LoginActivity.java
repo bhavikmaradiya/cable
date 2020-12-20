@@ -1,7 +1,7 @@
 package com.example.cable;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
@@ -9,8 +9,14 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.android.volley.AuthFailureError;
 import com.android.volley.toolbox.StringRequest;
 import com.example.cable.Model.Common;
+
+import org.json.JSONObject;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class LoginActivity extends AppCompatActivity {
     Button btnlogin;
@@ -33,9 +39,29 @@ public class LoginActivity extends AppCompatActivity {
             } else if (etPassword.getText().toString().trim().isEmpty()) {
                 Toast.makeText(LoginActivity.this, "Enter valid password", Toast.LENGTH_SHORT).show();
             } else {
-                StringRequest request = new StringRequest(Common.RECIPIENT, response -> {
-                    Toast.makeText(LoginActivity.this, response, Toast.LENGTH_SHORT).show();
-                }, error -> Toast.makeText(LoginActivity.this, error.getMessage(), Toast.LENGTH_SHORT).show());
+                StringRequest request = new StringRequest(Common.LOGIN
+                        , response -> {
+                    try {
+                        JSONObject object = new JSONObject(response);
+                        if (object.has("success") && object.getInt("success")==1) {
+                            Toast.makeText(this, "Logged in successfully", Toast.LENGTH_SHORT).show();
+                            getSharedPreferences(Common.IS_LOGIN, MODE_PRIVATE).edit().putBoolean(Common.IS_LOGIN, true).apply();
+                            startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                        }else {
+                            Toast.makeText(this, "Invalid details", Toast.LENGTH_SHORT).show();
+                        }
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                }, error -> Toast.makeText(LoginActivity.this, error.getMessage(), Toast.LENGTH_SHORT).show()) {
+                    @Override
+                    protected Map<String, String> getParams() throws AuthFailureError {
+                        Map<String, String> map = new HashMap<String, String>();
+                        map.put("mno", etMobileNo.getText().toString());
+                        map.put("pwd", etPassword.getText().toString());
+                        return map;
+                    }
+                };
 
             }
         });

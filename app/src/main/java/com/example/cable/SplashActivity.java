@@ -1,15 +1,13 @@
 package com.example.cable;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
-import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.os.Handler;
-import android.view.View;
 import android.view.WindowManager;
-import android.view.animation.Animation;
-import android.widget.LinearLayout;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.cable.Model.Common;
 
 public class SplashActivity extends AppCompatActivity {
     @Override
@@ -21,8 +19,12 @@ public class SplashActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent=new Intent(SplashActivity.this,LoginActivity.class);
-                startActivity(intent);
+                if (getSharedPreferences(Common.IS_LOGIN, MODE_PRIVATE).getBoolean(Common.IS_LOGIN, false)) {
+                    startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                } else {
+                    Intent intent = new Intent(SplashActivity.this, LoginActivity.class);
+                    startActivity(intent);
+                }
                 finish();
             }
         }, 3000);

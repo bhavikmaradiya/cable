@@ -20,4 +20,6 @@ public class Common {
 
     /**[It will display all details of subscriber and amount which is remaining to pay]**/
     public static final String SUBSCRIBER_REMAIN_AMOUNT = BASE_URL + "subscriber_details.php";
+    public static final String LOGIN = "http://cableapp.xtechsoftsolution.com/admin/api/login.php";
+    public static final String IS_LOGIN = "isLogged";
 }
