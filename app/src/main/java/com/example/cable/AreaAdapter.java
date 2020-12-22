@@ -12,22 +12,23 @@ import java.util.List;
 
 public class AreaAdapter extends BaseAdapter {
     Context context;
-    List<String> categories;
+    List<Area> areaList;
 
-    public AreaAdapter(Context context) {
+    public AreaAdapter(Context context, List<Area> areaList) {
         this.context = context;
-        this.categories = new ArrayList<>();
-        this.categories.add("Select Area");
+        this.areaList = new ArrayList<>();
+        this.areaList.add(new Area(null, "Select Area"));
+        this.areaList.addAll(areaList);
     }
 
     @Override
     public int getCount() {
-        return categories.size();
+        return areaList.size();
     }
 
     @Override
-    public String getItem(int i) {
-        return categories.get(i);
+    public Area getItem(int i) {
+        return areaList.get(i);
     }
 
     @Override
@@ -39,7 +40,7 @@ public class AreaAdapter extends BaseAdapter {
     public View getView(int i, View view, ViewGroup viewGroup) {
         view = LayoutInflater.from(context).inflate(R.layout.spinner_item, viewGroup, false);
         TextView names = view.findViewById(R.id.text);
-        names.setText(categories.get(i));
+        names.setText(areaList.get(i).getAreaName());
         return view;
     }
 }

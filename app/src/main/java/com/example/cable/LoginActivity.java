@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.example.cable.Model.Common;
 
 import org.json.JSONObject;
@@ -19,9 +20,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class LoginActivity extends AppCompatActivity {
-    Button btnlogin;
+    Button btnLogin;
     EditText etMobileNo, etPassword;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,10 +30,9 @@ public class LoginActivity extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         etMobileNo = findViewById(R.id.etMobile);
         etPassword = findViewById(R.id.etPassword);
-        btnlogin = findViewById(R.id.btnlogin);
+        btnLogin = findViewById(R.id.btnlogin);
 
-
-        btnlogin.setOnClickListener(v -> {
+        btnLogin.setOnClickListener(v -> {
             if (etMobileNo.getText().toString().trim().length() != 10) {
                 Toast.makeText(LoginActivity.this, "Enter valid mobile no", Toast.LENGTH_SHORT).show();
             } else if (etPassword.getText().toString().trim().isEmpty()) {
@@ -43,11 +42,11 @@ public class LoginActivity extends AppCompatActivity {
                         , response -> {
                     try {
                         JSONObject object = new JSONObject(response);
-                        if (object.has("success") && object.getInt("success")==1) {
+                        if (object.has("success") && object.getInt("success") == 1) {
                             Toast.makeText(this, "Logged in successfully", Toast.LENGTH_SHORT).show();
                             getSharedPreferences(Common.IS_LOGIN, MODE_PRIVATE).edit().putBoolean(Common.IS_LOGIN, true).apply();
                             startActivity(new Intent(getApplicationContext(), MainActivity.class));
-                        }else {
+                        } else {
                             Toast.makeText(this, "Invalid details", Toast.LENGTH_SHORT).show();
                         }
                     } catch (Exception e) {
@@ -55,14 +54,14 @@ public class LoginActivity extends AppCompatActivity {
                     }
                 }, error -> Toast.makeText(LoginActivity.this, error.getMessage(), Toast.LENGTH_SHORT).show()) {
                     @Override
-                    protected Map<String, String> getParams() throws AuthFailureError {
-                        Map<String, String> map = new HashMap<String, String>();
+                    protected Map<String, String> getParams() {
+                        Map<String, String> map = new HashMap<>();
                         map.put("mno", etMobileNo.getText().toString());
                         map.put("pwd", etPassword.getText().toString());
                         return map;
                     }
                 };
-
+                Volley.newRequestQueue(getApplicationContext()).add(request);
             }
         });
 
