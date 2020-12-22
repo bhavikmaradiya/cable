@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
         Fragment[] fragments = new Fragment[2];
         fragments[0] = new CurrentSubscriberFragment();
         fragments[1] = new PendingSubscriberFragment();
-        pagerAdapter = new PagerAdapter(getSupportFragmentManager(), fragments, new String[]{"Current", "Pending"}, FragmentPagerAdapter.BEHAVIOR_SET_USER_VISIBLE_HINT);
+        pagerAdapter = new PagerAdapter(getSupportFragmentManager(), fragments, new String[]{"Current", "Pending"}, FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
         pager.setAdapter(pagerAdapter);
     }
 
