@@ -1,4 +1,4 @@
-package com.example.cable;
+package com.example.cable.Activity;
 
 import android.os.Bundle;
 
@@ -8,6 +8,10 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
+import com.example.cable.Fragment.CurrentSubscriberFragment;
+import com.example.cable.Adapter.PagerAdapter;
+import com.example.cable.Fragment.PendingSubscriberFragment;
+import com.example.cable.R;
 import com.google.android.material.tabs.TabLayout;
 
 public class MainActivity extends AppCompatActivity {

@@ -1,4 +1,4 @@
-package com.example.cable;
+package com.example.cable.Model;
 
 import java.io.Serializable;
 

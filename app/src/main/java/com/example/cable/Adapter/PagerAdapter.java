@@ -1,4 +1,4 @@
-package com.example.cable;
+package com.example.cable.Adapter;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;

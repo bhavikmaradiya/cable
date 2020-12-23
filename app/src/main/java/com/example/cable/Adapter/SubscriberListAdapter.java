@@ -1,4 +1,4 @@
-package com.example.cable;
+package com.example.cable.Adapter;
 
 import android.content.Context;
 import android.content.Intent;
@@ -10,7 +10,10 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.cable.Activity.SubscriberDetailsActivity;
 import com.example.cable.Model.Common;
+import com.example.cable.Model.Subscriber;
+import com.example.cable.R;
 
 import java.util.List;
 
@@ -27,7 +30,7 @@ public class SubscriberListAdapter extends RecyclerView.Adapter<SubscriberListAd
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
+        LayoutInflater layoutInflater = LayoutInflater.from(context);
         View list = layoutInflater.inflate(R.layout.item_subscriber, parent, false);
         return new ViewHolder(list);
     }

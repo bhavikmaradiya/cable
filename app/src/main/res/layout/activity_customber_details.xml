@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".SubscriberDetailsActivity">
+    tools:context=".Activity.SubscriberDetailsActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -90,7 +90,7 @@
                                     android:textSize="13sp" />
 
                                 <TextView
-                                    android:id="@+id/tvname"
+                                    android:id="@+id/tvSubscriberName"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_below="@+id/fristitem"
@@ -104,7 +104,7 @@
                                 <ImageView
                                     android:layout_width="match_parent"
                                     android:layout_height="5dp"
-                                    android:layout_below="@id/tvname"
+                                    android:layout_below="@id/tvSubscriberName"
                                     android:src="@drawable/textitem" />
 
                             </RelativeLayout>
@@ -130,7 +130,7 @@
 
 
                                 <TextView
-                                    android:id="@+id/tvaddress"
+                                    android:id="@+id/tvSubscriberAddress"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_below="@id/seconditem"
@@ -144,7 +144,7 @@
                                 <ImageView
                                     android:layout_width="match_parent"
                                     android:layout_height="5dp"
-                                    android:layout_below="@id/tvaddress"
+                                    android:layout_below="@id/tvSubscriberAddress"
                                     android:src="@drawable/textitem" />
 
                             </RelativeLayout>
@@ -170,7 +170,7 @@
 
 
                                 <TextView
-                                    android:id="@+id/tvmobile"
+                                    android:id="@+id/tvSubscriberMobile"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_below="@id/thirditem"
@@ -184,7 +184,7 @@
                                 <ImageView
                                     android:layout_width="match_parent"
                                     android:layout_height="5dp"
-                                    android:layout_below="@id/tvmobile"
+                                    android:layout_below="@id/tvSubscriberMobile"
                                     android:src="@drawable/textitem" />
                             </RelativeLayout>
 

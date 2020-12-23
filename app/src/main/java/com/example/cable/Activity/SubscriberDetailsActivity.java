@@ -1,8 +1,10 @@
-package com.example.cable;
+package com.example.cable.Activity;
 
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.cable.R;
 
 public class SubscriberDetailsActivity extends AppCompatActivity {
 

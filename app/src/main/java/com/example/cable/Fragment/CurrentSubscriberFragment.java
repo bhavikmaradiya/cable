@@ -1,4 +1,4 @@
-package com.example.cable;
+package com.example.cable.Fragment;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -17,7 +17,12 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.android.volley.AuthFailureError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.cable.Adapter.AreaAdapter;
+import com.example.cable.Adapter.SubscriberListAdapter;
+import com.example.cable.Model.Area;
 import com.example.cable.Model.Common;
+import com.example.cable.Model.Subscriber;
+import com.example.cable.R;
 
 import org.json.JSONArray;
 import org.json.JSONObject;

@@ -1,4 +1,4 @@
-package com.example.cable;
+package com.example.cable.Activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,6 +8,7 @@ import android.view.WindowManager;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.cable.Model.Common;
+import com.example.cable.R;
 
 public class SplashActivity extends AppCompatActivity {
     @Override
