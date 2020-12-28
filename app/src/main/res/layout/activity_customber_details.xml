@@ -189,43 +189,6 @@
                             </RelativeLayout>
 
                             <RelativeLayout
-
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:gravity="center_vertical"
-                                android:padding="4dp">
-
-                                <TextView
-                                    android:id="@+id/fouritem"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:fontFamily="@font/cabin_bold"
-                                    android:gravity="center_vertical"
-                                    android:padding="2dp"
-                                    android:text="Subscriber Package"
-                                    android:textColor="#717070"
-                                    android:textSize="13sp" />
-
-                                <TextView
-                                    android:id="@+id/tvpackage"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_below="@+id/fouritem"
-                                    android:fontFamily="@font/cabin_semibold"
-                                    android:gravity="center_vertical"
-                                    android:padding="2dp"
-                                    android:textColor="#111111"
-                                    android:textSize="15sp"
-                                    tools:text="Simple Pacakge" />
-
-                                <ImageView
-                                    android:layout_width="match_parent"
-                                    android:layout_height="5dp"
-                                    android:layout_below="@id/tvpackage"
-                                    android:src="@drawable/textitem" />
-                            </RelativeLayout>
-
-                            <RelativeLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:gravity="center_vertical"
@@ -243,7 +206,7 @@
                                     android:textSize="13sp" />
 
                                 <TextView
-                                    android:id="@+id/tvsettopbox"
+                                    android:id="@+id/tvSetupBox"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_below="@+id/fiveitem"
@@ -257,7 +220,7 @@
                                 <ImageView
                                     android:layout_width="match_parent"
                                     android:layout_height="5dp"
-                                    android:layout_below="@id/tvsettopbox"
+                                    android:layout_below="@id/tvSetupBox"
                                     android:src="@drawable/textitem" />
                             </RelativeLayout>
 
@@ -274,12 +237,12 @@
                                     android:fontFamily="@font/cabin_bold"
                                     android:gravity="center_vertical"
                                     android:padding="2dp"
-                                    android:text="Status"
+                                    android:text="Area"
                                     android:textColor="#717070"
                                     android:textSize="13sp" />
 
                                 <TextView
-                                    android:id="@+id/tvstatus"
+                                    android:id="@+id/tvAreaName"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_below="@+id/sixitem"
@@ -288,12 +251,12 @@
                                     android:padding="2dp"
                                     android:textColor="#111111"
                                     android:textSize="15sp"
-                                    tools:text="Deactivate" />
+                                    tools:text="12345678" />
 
                                 <ImageView
                                     android:layout_width="match_parent"
                                     android:layout_height="5dp"
-                                    android:layout_below="@id/tvstatus"
+                                    android:layout_below="@id/tvSetupBox"
                                     android:src="@drawable/textitem" />
                             </RelativeLayout>
 
@@ -497,7 +460,7 @@
                                     android:textSize="13sp" />
 
                                 <TextView
-                                    android:id="@+id/tvpackagename"
+                                    android:id="@+id/pkgName"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_below="@+id/nineitem"
@@ -511,7 +474,7 @@
                                 <ImageView
                                     android:layout_width="match_parent"
                                     android:layout_height="5dp"
-                                    android:layout_below="@id/tvpackagename"
+                                    android:layout_below="@id/pkgName"
                                     android:src="@drawable/textitem" />
 
                             </RelativeLayout>
@@ -531,13 +494,13 @@
                                     android:fontFamily="@font/cabin_bold"
                                     android:gravity="center_vertical"
                                     android:padding="2dp"
-                                    android:text="Package Details"
+                                    android:text="Package Price"
                                     android:textColor="#717070"
                                     android:textSize="13sp" />
 
 
                                 <TextView
-                                    android:id="@+id/tvpackagedetails"
+                                    android:id="@+id/pkgPrice"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_below="@id/tenitem"
@@ -551,7 +514,7 @@
                                 <ImageView
                                     android:layout_width="match_parent"
                                     android:layout_height="5dp"
-                                    android:layout_below="@id/tvpackagedetails"
+                                    android:layout_below="@id/pkgPrice"
                                     android:src="@drawable/textitem" />
 
                             </RelativeLayout>
@@ -571,13 +534,13 @@
                                     android:fontFamily="@font/cabin_bold"
                                     android:gravity="center_vertical"
                                     android:padding="2dp"
-                                    android:text="Subscriber Mobile No"
+                                    android:text="Package Description"
                                     android:textColor="#717070"
                                     android:textSize="13sp" />
 
 
                                 <TextView
-                                    android:id="@+id/tvpackageprize"
+                                    android:id="@+id/pkgDescription"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_below="@id/elevenitem"
@@ -591,7 +554,7 @@
                                 <ImageView
                                     android:layout_width="match_parent"
                                     android:layout_height="5dp"
-                                    android:layout_below="@id/tvpackageprize"
+                                    android:layout_below="@id/pkgDescription"
                                     android:src="@drawable/textitem" />
                             </RelativeLayout>
 

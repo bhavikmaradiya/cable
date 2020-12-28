@@ -3,7 +3,7 @@ package com.example.cable.Model;
 import java.io.Serializable;
 
 public class Subscriber implements Serializable {
-    public String name;
+    private String name;
     private String mobileNo;
     private String id;
     private String address;
